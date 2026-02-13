@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sobji Bazar - Fresh Grocery Theme */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Fresh Green Theme - Primary */
+    --background: 120 20% 98%;
+    --foreground: 150 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 15%;
+
+    /* Fresh Green Primary */
+    --primary: 142 70% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 60% 50%;
+
+    /* Warm Orange Secondary */
+    --secondary: 32 95% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 120 10% 94%;
+    --muted-foreground: 150 15% 45%;
+
+    /* Light Green Accent */
+    --accent: 142 50% 92%;
+    --accent-foreground: 142 70% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 15% 88%;
+    --input: 120 15% 88%;
+    --ring: 142 70% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --success: 142 70% 45%;
+    --warning: 38 92% 50%;
+    --info: 200 80% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 70%, 40%) 0%, hsl(142, 60%, 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(142, 70%, 35%) 0%, hsl(160, 60%, 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(120, 20%, 98%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(32, 95%, 55%) 0%, hsl(25, 90%, 50%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(150 30% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(150 30% 15% / 0.1), 0 2px 4px -2px hsl(150 30% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(150 30% 15% / 0.1), 0 4px 6px -4px hsl(150 30% 15% / 0.1);
+    --shadow-card: 0 4px 20px -4px hsl(142 70% 40% / 0.15);
+    --shadow-hover: 0 8px 30px -6px hsl(142 70% 40% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 142 70% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 50% 92%;
+    --sidebar-accent-foreground: 142 70% 30%;
+    --sidebar-border: 120 15% 88%;
+    --sidebar-ring: 142 70% 40%;
+  }
+
+  .dark {
+    --background: 150 30% 8%;
+    --foreground: 120 20% 95%;
+
+    --card: 150 25% 12%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 150 25% 12%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 65% 50%;
+    --primary-foreground: 150 30% 8%;
+
+    --secondary: 32 90% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 150 20% 18%;
+    --muted-foreground: 120 10% 60%;
+
+    --accent: 142 40% 20%;
+    --accent-foreground: 142 60% 70%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 20%;
+    --input: 150 20% 20%;
+    --ring: 142 65% 50%;
+
+    --sidebar-background: 150 25% 10%;
+    --sidebar-foreground: 120 20% 95%;
+    --sidebar-primary: 142 65% 50%;
+    --sidebar-primary-foreground: 150 30% 8%;
+    --sidebar-accent: 142 40% 20%;
+    --sidebar-accent-foreground: 142 60% 70%;
+    --sidebar-border: 150 20% 20%;
+    --sidebar-ring: 142 65% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', 'Hind Siliguri', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hind Siliguri', 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90 transition-all duration-200;
+    background: var(--gradient-primary);
+  }
+
+  .btn-secondary {
+    background: var(--gradient-orange);
+    @apply text-white hover:opacity-90 transition-all duration-200;
+  }
+
+  .card-product {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-product:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+
+  .badge-offer {
+    background: var(--gradient-orange);
+    @apply text-white text-xs font-semibold px-2 py-1 rounded-full;
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
